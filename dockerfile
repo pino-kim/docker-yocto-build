@@ -40,4 +40,6 @@ RUN apt-get install -y \
 # Add i386 package
 RUN dpkg --add-architecture i386 && apt-get update 
 
-
+# Sets language to UTF8 : this works in pretty much all cases
+ENV LANG en_US.UTF-8
+RUN locale-gen $LANG
